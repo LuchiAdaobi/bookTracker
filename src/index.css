@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
 }
-body {
+/* body {
   box-sizing: border-box;
   background: hsla(12, 84%, 68%, 1);
 
@@ -28,4 +28,18 @@ body {
 
   height: 100vh;
   color: white;
+} */
+
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: rgb(31, 29, 29);
+  color: aliceblue;
+  font-family: Arial;
+}
+
+.nav{
+  background-color: rgb(23, 22, 22);
+  padding: .5rem;
 }
