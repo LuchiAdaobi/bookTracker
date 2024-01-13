@@ -4,7 +4,7 @@ import Navbar from "./components/Nav";
 import Header from "./components/Header";
 import Books from "./components/books";
 import Footer from "./components/Footer";
-import GroupedBookCategory from "./components/GroupedBookCategory";
+import GroupedBooksCategory from "./components/GroupedBooksCategory";
 import NotFound from "./components/NotFound";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
@@ -80,8 +80,8 @@ function App() {
             }
           ></Route>
           <Route
-            path="/GroupedBookCategory"
-            element={<GroupedBookCategory />}
+            path="/GroupedBooksCategory"
+            element={<GroupedBooksCategory />}
           ></Route>
           <Route
             path="*"

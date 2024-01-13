@@ -2,33 +2,6 @@
   margin: 0;
   padding: 0;
 }
-/* body {
-  box-sizing: border-box;
-  background: hsla(12, 84%, 68%, 1);
-
-  background: linear-gradient(
-    90deg,
-    hsla(12, 84%, 68%, 1) 0%,
-    hsla(343, 100%, 66%, 1) 100%
-  );
-
-  background: -moz-linear-gradient(
-    90deg,
-    hsla(12, 84%, 68%, 1) 0%,
-    hsla(343, 100%, 66%, 1) 100%
-  );
-
-  background: -webkit-linear-gradient(
-    90deg,
-    hsla(12, 84%, 68%, 1) 0%,
-    hsla(343, 100%, 66%, 1) 100%
-  );
-
-  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#F28367", endColorstr="#FF5282", GradientType=1 );
-
-  height: 100vh;
-  color: white;
-} */
 
 body {
   margin: 0;
@@ -37,7 +10,7 @@ body {
   color: #ffffff;
   font-family: Arial;
 }
-.container{
+.container {
   text-align: center;
 }
 .navbar {
@@ -47,24 +20,32 @@ body {
   justify-content: flex-end;
   cursor: pointer;
 }
-.navbar-nav{
+.navbar-nav {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
   align-items: flex-end;
-} 
-.nav-item {
-  font-size: .8rem;
-  margin-right: .5rem;
+  color: #fff;
 }
-.nav-item:hover{
-  color: #e2dfdf;
+.nav-link {
+  color: #fff;
+}
+
+.nav-item {
+  font-size: 0.8rem;
+  margin-right: 0.5rem;
+  color: #fff;
+}
+.nav-link:hover {
+  color: #edc9c9;
+}
+ .navbar-nav .nav-item .nav-link.active {
+  color: #edc9c9;
 }
 .card {
   width: 200px;
   padding: 0;
   cursor: pointer;
-  /* height: 350px; */
 }
 
 .card-img-top {
@@ -73,11 +54,11 @@ body {
   width: 100%;
   object-fit: cover;
 }
-h5{
+h5 {
   font-size: 1rem;
 }
 small {
-  font-size: .7rem;
+  font-size: 0.7rem;
 }
 .standout {
   box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.3), 0px 0px 0px 4px rgb(235, 95, 184);
@@ -91,21 +72,20 @@ small {
 }
 
 .red-heart::before {
-  content: '\2764';
+  content: "\2764";
   font-size: 12px;
   color: red;
-  margin-left: .3rem;
+  margin-left: 0.3rem;
 }
 
 .white-heart::before {
-  content: '\1F90D';
+  content: "\1F90D";
   font-size: 15px;
   color: #fff;
-  margin-left: .3rem;
+  margin-left: 0.3rem;
 }
 
 .subtitle {
   display: flex;
   align-items: center;
 }
-
