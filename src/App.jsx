@@ -6,10 +6,23 @@ import Books from "./components/books";
 import Footer from "./components/Footer";
 
 function App() {
-  const [books, setBooks] = useState(data);
-  const [selectedBookCategory, setSelectedBookCategory] = useState('Read');
+  const [books, setBooks] = useState(
+    JSON.parse(localStorage.getItem("booksList")) || data
+  );
+  const [selectedBookCategory, setSelectedBookCategory] = useState(
+    JSON.parse(localStorage.getItem("selectedBookCategory")) || "Reread"
+  );
+
   const [bookId, setBookId] = useState(null);
+
   // const [isFav, setIsFav] = useState(false)
+
+  useEffect(() => {
+    localStorage.setItem("booksList", JSON.stringify(books));
+  }, [books]);
+  useEffect(() => {
+    localStorage.setItem("bookCategory", JSON.stringify(selectedBookCategory));
+  }, [selectedBookCategory]);
 
   function handleBookSelection(e) {
     setSelectedBookCategory(e.target.value);
@@ -40,12 +53,14 @@ function App() {
   return (
     <div>
       <Navbar />
-      <Header 
-      selectedBookCategory={selectedBookCategory}
-      bookCategoryCount={books.filter(book => {
-        book.category === selectedBookCategory
-      }).length}
-       />
+      <Header
+        selectedBookCategory={selectedBookCategory}
+        bookCategoryCount={
+          books.filter((book) => {
+           return book.category === selectedBookCategory;
+          }).length
+        }
+      />
       <Books
         books={books}
         handleBookSelection={handleBookSelection}
