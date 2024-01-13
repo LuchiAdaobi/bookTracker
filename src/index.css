@@ -38,9 +38,25 @@ body {
   font-family: Arial;
 }
 
-.nav {
+.navbar {
   background-color: rgb(39, 17, 33);
   padding: 0.5rem;
+  display: flex;
+  justify-content: flex-end;
+  cursor: pointer;
+}
+.navbar-nav{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: flex-end;
+} 
+.nav-item {
+  font-size: .8rem;
+  margin-right: .5rem;
+}
+.nav-item:hover{
+  color: #e2dfdf;
 }
 .card {
   width: 200px;
@@ -90,6 +106,4 @@ small {
   display: flex;
   align-items: center;
 }
-.favorite {
-  border: 2px solid #f00; /* You can customize this border color */
-}
+
