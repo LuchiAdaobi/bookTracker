@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import data from "./data";
 import Navbar from "./components/Nav";
 import Header from "./components/Header";
@@ -6,11 +6,50 @@ import Books from "./components/books";
 import Footer from "./components/Footer";
 
 function App() {
+  const [books, setBooks] = useState(data);
+  const [selectedBookCategory, setSelectedBookCategory] = useState();
+  const [bookId, setBookId] = useState(null);
+  // const [isFav, setIsFav] = useState(false)
+
+  function handleBookSelection(e) {
+    setSelectedBookCategory(e.target.value);
+  }
+
+  function handleBookCardClick(e) {
+    setBookId(parseInt(e.currentTarget.id));
+    const transformedBooks = books.map((book) =>
+      book.id === parseInt(e.currentTarget.id)
+        ? book.category === selectedBookCategory
+          ? { ...book, category: "" }
+          : { ...book, category: selectedBookCategory }
+        : book
+    );
+
+    setBooks(transformedBooks);
+  }
+
+  const handleFavClick = (bookId) => {
+    setBooks((prevBooks) => {
+      const updatedBooks = prevBooks.map((book) =>
+        book.id === bookId ? { ...book, isFavorite: !book.isFavorite } : book
+      );
+      return [...updatedBooks]; // Create a new array
+    });
+  };
+
+
   return (
     <div>
       <Navbar />
       <Header />
-      <Books />
+      <Books
+        books={books}
+        handleBookSelection={handleBookSelection}
+        selectedBookCategory={selectedBookCategory}
+        handleBookCardClick={handleBookCardClick}
+        handleFavClick={handleFavClick}
+        // isFav={isFav}
+      />
       <Footer />
     </div>
   );

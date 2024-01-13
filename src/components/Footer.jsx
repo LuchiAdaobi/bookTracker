@@ -1,13 +1,15 @@
-export default function Footer() {
-    let today = new Date()
+const Footer = () => {
+  let today = new Date();
 
-    return (
-      <footer className="container">
-        <div className="row justify-content-center mt-3 mb-3">
-          <div className="col-8">
-            <small>Book Tracker App - {today.getFullYear()}</small>
-          </div>
+  return (
+    <footer className="container">
+      <div className="row justify-content-center mt-3 mb-4">
+        <div className="col-8 text-center">
+          <small> Team Member Allocation App - {today.getFullYear()} </small>
         </div>
-      </footer>
-    );
-}
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;

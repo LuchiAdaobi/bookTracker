@@ -30,16 +30,66 @@
   color: white;
 } */
 
-
 body {
   margin: 0;
   padding: 0;
-  background-color: rgb(31, 29, 29);
-  color: aliceblue;
+  background-color: rgb(26, 5, 26);
+  color: #ffffff;
   font-family: Arial;
 }
 
-.nav{
-  background-color: rgb(23, 22, 22);
-  padding: .5rem;
+.nav {
+  background-color: rgb(39, 17, 33);
+  padding: 0.5rem;
+}
+.card {
+  width: 200px;
+  padding: 0;
+  cursor: pointer;
+  /* height: 350px; */
+}
+
+.card-img-top {
+  overflow: hidden;
+  height: 230px;
+  width: 100%;
+  object-fit: cover;
+}
+h5{
+  font-size: 1rem;
+}
+small {
+  font-size: .7rem;
+}
+.standout {
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.3), 0px 0px 0px 4px rgb(235, 95, 184);
+}
+.heart {
+  position: relative;
+  width: 12px;
+  height: 12px;
+  cursor: pointer;
+  display: inline;
+}
+
+.red-heart::before {
+  content: '\2764';
+  font-size: 12px;
+  color: red;
+  margin-left: .3rem;
+}
+
+.white-heart::before {
+  content: '\1F90D';
+  font-size: 15px;
+  color: #fff;
+  margin-left: .3rem;
+}
+
+.subtitle {
+  display: flex;
+  align-items: center;
+}
+.favorite {
+  border: 2px solid #f00; /* You can customize this border color */
 }
