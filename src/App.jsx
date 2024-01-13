@@ -7,7 +7,7 @@ import Footer from "./components/Footer";
 
 function App() {
   const [books, setBooks] = useState(data);
-  const [selectedBookCategory, setSelectedBookCategory] = useState();
+  const [selectedBookCategory, setSelectedBookCategory] = useState('Read');
   const [bookId, setBookId] = useState(null);
   // const [isFav, setIsFav] = useState(false)
 
@@ -37,11 +37,15 @@ function App() {
     });
   };
 
-
   return (
     <div>
       <Navbar />
-      <Header />
+      <Header 
+      selectedBookCategory={selectedBookCategory}
+      bookCategoryCount={books.filter(book => {
+        book.category === selectedBookCategory
+      }).length}
+       />
       <Books
         books={books}
         handleBookSelection={handleBookSelection}
