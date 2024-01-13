@@ -4,6 +4,9 @@ import Navbar from "./components/Nav";
 import Header from "./components/Header";
 import Books from "./components/books";
 import Footer from "./components/Footer";
+import GroupedBookCategory from "./components/GroupedBookCategory";
+import NotFound from "./components/NotFound";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
   const [books, setBooks] = useState(
@@ -52,24 +55,41 @@ function App() {
 
   return (
     <div>
-      <Navbar />
-      <Header
-        selectedBookCategory={selectedBookCategory}
-        bookCategoryCount={
-          books.filter((book) => {
-           return book.category === selectedBookCategory;
-          }).length
-        }
-      />
-      <Books
-        books={books}
-        handleBookSelection={handleBookSelection}
-        selectedBookCategory={selectedBookCategory}
-        handleBookCardClick={handleBookCardClick}
-        handleFavClick={handleFavClick}
-        // isFav={isFav}
-      />
-      <Footer />
+      <Router>
+        <Navbar />
+        <Header
+          selectedBookCategory={selectedBookCategory}
+          bookCategoryCount={
+            books.filter((book) => {
+              return book.category === selectedBookCategory;
+            }).length
+          }
+        />
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <Books
+                books={books}
+                handleBookSelection={handleBookSelection}
+                selectedBookCategory={selectedBookCategory}
+                handleBookCardClick={handleBookCardClick}
+                handleFavClick={handleFavClick}
+                // isFav={isFav}
+              />
+            }
+          ></Route>
+          <Route
+            path="/GroupedBookCategory"
+            element={<GroupedBookCategory />}
+          ></Route>
+          <Route
+            path="*"
+            element={<NotFound />}
+          ></Route>
+        </Routes>
+        <Footer />
+      </Router>
     </div>
   );
 }
