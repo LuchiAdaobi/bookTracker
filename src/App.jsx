@@ -16,9 +16,8 @@ function App() {
     JSON.parse(localStorage.getItem("selectedBookCategory")) || "Reread"
   );
 
-  const [bookId, setBookId] = useState(null);
 
-  // const [isFav, setIsFav] = useState(false)
+  const [isFav, setIsFav] = useState(false)
 
   useEffect(() => {
     localStorage.setItem("booksList", JSON.stringify(books));
@@ -51,6 +50,8 @@ function App() {
       );
       return [...updatedBooks]; // Create a new array
     });
+
+    setIsFav(prev => !prev)
   };
 
   return (
