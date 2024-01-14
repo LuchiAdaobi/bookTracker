@@ -14,6 +14,11 @@ export default function Navbar() {
             Category
           </NavLink>
         </li>
+        <li className="nav-item">
+          <NavLink className="nav-link" to="/FavoriteBooks">
+            ❤
+          </NavLink>
+        </li>
       </ul>
     </nav>
   );

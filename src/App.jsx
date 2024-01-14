@@ -81,7 +81,7 @@ function App() {
           ></Route>
           <Route
             path="/GroupedBooksCategory"
-            element={<GroupedBooksCategory />}
+            element={<GroupedBooksCategory books={books} selectedBookCategory={selectedBookCategory} />}
           ></Route>
           <Route
             path="*"

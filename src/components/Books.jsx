@@ -21,7 +21,7 @@ export default function Books({
             <option value="Reread">Re-read</option>
             <option value="CurrentlyReading">Currently Reading</option>
             <option value="Finished">Finished</option>
-            <option value="Favorite">Favorite</option>
+            {/* <option value="Favorite">Favorite</option> */}
           </select>
         </div>
       </div>
