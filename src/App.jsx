@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import data from "./data";
 import Navbar from "./components/Nav";
 import Header from "./components/Header";
-import Books from "./components/Books";
+import Books from "./components/BooksContent";
 import Footer from "./components/Footer";
 import GroupedBooksCategory from "./components/GroupedBooksCategory";
 import NotFound from "./components/NotFound";
