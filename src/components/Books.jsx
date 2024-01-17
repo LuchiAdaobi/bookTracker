@@ -6,8 +6,6 @@ export default function Books({
   handleFavClick,
 //   isFav
 }) {
-
-    
   return (
     <main className="container">
       <div className="row justify-content-center mt-3 mb-3">
@@ -21,7 +19,6 @@ export default function Books({
             <option value="Reread">Re-read</option>
             <option value="CurrentlyReading">Currently Reading</option>
             <option value="Finished">Finished</option>
-            {/* <option value="Favorite">Favorite</option> */}
           </select>
         </div>
       </div>
@@ -55,7 +52,7 @@ export default function Books({
                         <span>
                           <div
                             className="heart-container"
-                            onClick={() => handleFavClick(book.id)}
+                            onClick={(e) => handleFavClick(book.id, e)}
                           >
                             <div
                               className={

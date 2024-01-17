@@ -7,17 +7,18 @@ import Footer from "./components/Footer";
 import GroupedBooksCategory from "./components/GroupedBooksCategory";
 import NotFound from "./components/NotFound";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import FavoriteBooks from "./components/FavoriteBooks";
 
 function App() {
   const [books, setBooks] = useState(
     JSON.parse(localStorage.getItem("booksList")) || data
   );
   const [selectedBookCategory, setSelectedBookCategory] = useState(
-    JSON.parse(localStorage.getItem("selectedBookCategory")) || "Reread"
+    JSON.parse(localStorage.getItem("selectedBookCategory")) ||
+      "CurrentlyReading"
   );
 
-
-  const [isFav, setIsFav] = useState(false)
+  // const [isFav, setIsFav] = useState(false);
 
   useEffect(() => {
     localStorage.setItem("booksList", JSON.stringify(books));
@@ -31,7 +32,6 @@ function App() {
   }
 
   function handleBookCardClick(e) {
-    setBookId(parseInt(e.currentTarget.id));
     const transformedBooks = books.map((book) =>
       book.id === parseInt(e.currentTarget.id)
         ? book.category === selectedBookCategory
@@ -43,16 +43,17 @@ function App() {
     setBooks(transformedBooks);
   }
 
-  const handleFavClick = (bookId) => {
-    setBooks((prevBooks) => {
-      const updatedBooks = prevBooks.map((book) =>
-        book.id === bookId ? { ...book, isFavorite: !book.isFavorite } : book
-      );
-      return [...updatedBooks]; // Create a new array
-    });
-
-    setIsFav(prev => !prev)
-  };
+const handleFavClick = (bookId, e) => {
+  e.stopPropagation();
+  console.log("handleFavClick called with bookId:", bookId);
+  setBooks((prevBooks) => {
+    const updatedBooks = prevBooks.map((book) =>
+      book.id === bookId ? { ...book, isFavorite: !book.isFavorite } : book
+    );
+    console.log(updatedBooks);
+    return [...updatedBooks];
+  });
+};
 
   return (
     <div>
@@ -65,6 +66,9 @@ function App() {
               return book.category === selectedBookCategory;
             }).length
           }
+          favBookCategoryCount={books.filter(book => {
+            return book.isFavorite
+          }).length}
         />
         <Routes>
           <Route
@@ -82,13 +86,22 @@ function App() {
           ></Route>
           <Route
             path="/GroupedBooksCategory"
-            element={<GroupedBooksCategory books={books} selectedBookCategory={selectedBookCategory} />}
+            element={
+              <GroupedBooksCategory
+                books={books}
+                selectedBookCategory={selectedBookCategory}
+              />
+            }
           ></Route>
           <Route
-            path="*"
-            element={<NotFound />}
+            path="/FavoriteBooks"
+            element={
+              <FavoriteBooks books={books} handleFavClick={handleFavClick} />
+            }
           ></Route>
+          <Route path="*" element={<NotFound />}></Route>
         </Routes>
+
         <Footer />
       </Router>
     </div>

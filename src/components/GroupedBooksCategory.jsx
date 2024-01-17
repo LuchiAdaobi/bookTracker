@@ -7,7 +7,7 @@ export default function GroupedBooksCategory({ books, selectedBookCategory }) {
     const booksCategory = [
       "Read",
       "Reread",
-      "currentlyReading",
+      "CurrentlyReading",
       "Finished",
     //   "Favorite",
     ];
@@ -55,11 +55,11 @@ export default function GroupedBooksCategory({ books, selectedBookCategory }) {
                   className={item.collapsed ? "collapse" : ""}
                 >
                   {item.group.map((bk, index) => (
-                    <div key={index} className="mt-2">
+                    <div key={index} className="mt-2 foldable">
                       <h5 className="card-title mt-2">
                         Title: {bk.bookName}
                       </h5>
-                      <p>Author: {bk.author}</p>
+                      <p className="author">Author: {bk.author}</p>
                     </div>
                   ))}
                 </div>
