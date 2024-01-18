@@ -4,8 +4,14 @@ export default function Books({
   selectedBookCategory,
   handleBookCardClick,
   handleFavClick,
+  handleSearchInput,
+  searchQuery
   //   isFav
 }) {
+  const filteredBooks = books.filter((book) =>
+    book.bookName.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
   return (
     <main className="container">
       <div className="row justify-content-center mt-3 mb-3">
@@ -22,17 +28,20 @@ export default function Books({
               <option value="Finished">Finished</option>
             </select>
 
-            <div className="input-group ms-2">
+            <div className="input-group ms-1">
               <input
                 type="text"
                 className="form-control"
                 placeholder="Search books..."
+                value={searchQuery}
+                onChange={handleSearchInput}
               />
-              <button className="btn btn-outline-secondary" type="button" style={{ border: "1px solid #bf7e99" }}>
-                <i
-                  className="fa fa-search"
-                  style={{ color: "#bf5e85" }}
-                ></i>
+              <button
+                className="btn btn-outline-secondary"
+                type="button"
+                style={{ border: "1px solid #bf7e99" }}
+              >
+                <i className="fa fa-search" style={{ color: "#bf5e85" }}></i>
               </button>
             </div>
           </div>
@@ -42,7 +51,7 @@ export default function Books({
       <div className="row justify-content-center mt-3 mb-3">
         <div className="col-10">
           <div className="card-collection">
-            {books.map((book) => (
+            {filteredBooks.map((book) => (
               <div
                 key={book.id}
                 id={book.id}

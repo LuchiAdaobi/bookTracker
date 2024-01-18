@@ -73,3 +73,20 @@ export default function Books({
     </main>
   );
 }
+
+
+{
+  isFavoritePage ? (
+    <h6>
+      You have {favBookCategoryCount}{" "}
+      {favBookCategoryCount > 1 ? "favorites" : "favorite"}{" "}
+      {favBookCategoryCount > 1 ? "books" : "book"}.
+    </h6>
+  ) : (
+    <h6>
+      There {bookCategoryCount > 1 ? "are" : "is"} {bookCategoryCount}{" "}
+      {bookCategoryCount > 1 ? "books" : "book"} in the{" "}
+      <span style={{ color: "#bf3e85" }}>{selectedBookCategory}</span> category
+    </h6>
+  );
+}

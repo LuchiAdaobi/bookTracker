@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 export default function Header({ selectedBookCategory, bookCategoryCount, favBookCategoryCount }) {
   const navigate = useNavigate();
   const isFavoritePage = window.location.pathname === "/FavoriteBooks";
+  const groupedBooksCategory = window.location.pathname === "/GroupedBooksCategory";
 
   return (
     <header className="container">

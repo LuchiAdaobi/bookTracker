@@ -17,7 +17,7 @@ function App() {
     JSON.parse(localStorage.getItem("selectedBookCategory")) ||
       "CurrentlyReading"
   );
-
+  const [searchQuery, setSearchQuery] = useState("");
   // const [isFav, setIsFav] = useState(false);
 
   useEffect(() => {
@@ -43,17 +43,24 @@ function App() {
     setBooks(transformedBooks);
   }
 
-const handleFavClick = (bookId, e) => {
-  e.stopPropagation();
-  console.log("handleFavClick called with bookId:", bookId);
-  setBooks((prevBooks) => {
-    const updatedBooks = prevBooks.map((book) =>
-      book.id === bookId ? { ...book, isFavorite: !book.isFavorite } : book
-    );
-    console.log(updatedBooks);
-    return [...updatedBooks];
-  });
-};
+  const handleFavClick = (bookId, e) => {
+    e.stopPropagation();
+    console.log("handleFavClick called with bookId:", bookId);
+    setBooks((prevBooks) => {
+      const updatedBooks = prevBooks.map((book) =>
+        book.id === bookId ? { ...book, isFavorite: !book.isFavorite } : book
+      );
+      console.log(updatedBooks);
+      return [...updatedBooks];
+    });
+  };
+
+  // const filteredBooks = books.filter((book) =>
+  //   book.bookName.toLowerCase().includes(searchQuery.toLowerCase())
+  // );
+  function handleSearchInput(e) {
+     setSearchQuery(e.target.value);
+  }
 
   return (
     <div>
@@ -66,9 +73,11 @@ const handleFavClick = (bookId, e) => {
               return book.category === selectedBookCategory;
             }).length
           }
-          favBookCategoryCount={books.filter(book => {
-            return book.isFavorite
-          }).length}
+          favBookCategoryCount={
+            books.filter((book) => {
+              return book.isFavorite;
+            }).length
+          }
         />
         <Routes>
           <Route
@@ -80,6 +89,8 @@ const handleFavClick = (bookId, e) => {
                 selectedBookCategory={selectedBookCategory}
                 handleBookCardClick={handleBookCardClick}
                 handleFavClick={handleFavClick}
+                handleSearchInput={handleSearchInput}
+                searchQuery={searchQuery}
                 // isFav={isFav}
               />
             }

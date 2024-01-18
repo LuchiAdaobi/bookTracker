@@ -127,7 +127,7 @@ body {
     box-sizing: border-box;
     cursor: pointer;
   }
-  .btn.btn-outline-secondary:hover{
+  .btn.btn-outline-secondary:hover {
     background-color: #bf7e85;
   }
   .footer-container {
@@ -151,16 +151,18 @@ body {
   }
 
   /* Media Queries */
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1008px) {
     .card-collection {
       grid-template-columns: 1fr;
     }
-    .col-11 {
-      width: 70vw;
+    .col-10 {
+      width: 90vw;
+    }
+    .col-6 {
+      width: 55vw;
     }
     .card-title {
       font-size: 1rem;
-      /* padding: 0 1.5rem; */
     }
     .mt-2 p {
       font-size: 0.8rem;
@@ -177,8 +179,11 @@ body {
     nav {
       font-size: 0.8rem;
     }
+    .card {
+      width: 180px;
+    }
   }
-  @media screen and (max-width: 508px) {
+  @media screen and (max-width: 600px) {
     nav {
       font-size: 0.7rem;
     }
@@ -188,6 +193,16 @@ body {
     }
     .mt-2 p {
       font-size: 0.75rem;
+    }
+    .d-flex {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .col-6 {
+      width: 45vw;
+    }
+    .card {
+      width: 180px;
     }
   }
 }
