@@ -11,7 +11,7 @@ export default function Header({ selectedBookCategory, bookCategoryCount, favBoo
           <h1>Book Tracker</h1>
           {isFavoritePage ? (
             <h6>
-            You have {favBookCategoryCount} {' '}
+              You have {favBookCategoryCount}{" "}
               {favBookCategoryCount > 1 ? "favorites" : "favorite"}{" "}
               {favBookCategoryCount > 1 ? "books" : "book"}.
             </h6>
@@ -19,7 +19,7 @@ export default function Header({ selectedBookCategory, bookCategoryCount, favBoo
             <h6>
               There {bookCategoryCount > 1 ? "are" : "is"} {bookCategoryCount}{" "}
               {bookCategoryCount > 1 ? "books" : "book"} in the{" "}
-              <span style={{ color: "green" }}>{selectedBookCategory}</span>{" "}
+              <span style={{ color: "#bf3e85" }}>{selectedBookCategory}</span>{" "}
               category
             </h6>
           )}

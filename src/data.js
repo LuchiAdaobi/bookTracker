@@ -3,10 +3,11 @@ export default [
     id: 0,
     bookName: "Meditations",
     author: "Marcus Aurelius",
-    category: "Reread",
+    category: "CurrentlyReading",
     image:
       "https://m.media-amazon.com/images/I/71FCbiv0tTL._AC_UF1000,1000_QL80_.jpg",
     isFavorite: false,
+    
   },
   {
     id: 1,
@@ -15,6 +16,7 @@ export default [
     category: "Reread",
     image: "https://mindville.ng/wp-content/uploads/2022/03/18668059.jpg",
     isFavorite: false,
+    
   },
   {
     id: 2,
@@ -23,6 +25,7 @@ export default [
     category: "Reread",
     image: "https://images.penguinrandomhouse.com/cover/9780143124177",
     isFavorite: false,
+    
   },
   {
     id: 3,
@@ -31,14 +34,16 @@ export default [
     category: "Reread",
     image: "https://m.media-amazon.com/images/I/41KCjY8xg3L.jpg",
     isFavorite: false,
+    
   },
   {
     id: 4,
     bookName: "Benjamin Franklin: An American Life",
     author: "Walter Isaacson",
-    category: "Reread",
+    category: "Read",
     image: "https://m.media-amazon.com/images/I/517M31AmZmL._SL500_.jpg",
     isFavorite: false,
+    
   },
   {
     id: 5,
@@ -47,6 +52,7 @@ export default [
     category: "Read",
     image: "https://rhbooks.com.ng/wp-content/uploads/2020/09/martin.jpg",
     isFavorite: false,
+   
   },
   {
     id: 6,
@@ -69,7 +75,7 @@ export default [
     id: 8,
     bookName: "Long Walk to Freedom",
     author: "Nelson Mandela",
-    category: "Reread",
+    category: "Read",
     image: "https://buybooks.ng/wp-content/uploads/2020/06/web-1.jpg",
     isFavorite: false,
   },
@@ -85,7 +91,7 @@ export default [
     id: 10,
     bookName: "Titan: The Life of John D. Rockefeller, Sr.",
     author: "Ron Chernow",
-    category: "Reread",
+    category: "Read",
     image:
       "https://shopwazobia.com/wp-content/uploads/2018/08/51YuHCz4WLL._SX329_BO1204203200_.jpg",
     isFavorite: false,
@@ -94,7 +100,7 @@ export default [
     id: 11,
     bookName: "Steve Jobs",
     author: "Walter Isaacson",
-    category: "Reread",
+    category: "Finished",
     image:
       "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1511288482i/11084145.jpg",
     isFavorite: false,
@@ -146,7 +152,7 @@ export default [
     id: 17,
     bookName: "The Mom Test",
     author: "Rob Fitzpatrick",
-    category: "Reread",
+    category: "Read",
     image:
       "https://m.media-amazon.com/images/I/61ixLoT4lyL._AC_UF1000,1000_QL80_.jpg",
     isFavorite: false,
@@ -155,7 +161,7 @@ export default [
     id: 18,
     bookName: "Zero to One",
     author: "Blake Masters and Peter Thiel",
-    category: "Reread",
+    category: "Read",
     image:
       "https://cdn.kobo.com/book-images/8ac7fd3a-b91f-4ed2-9633-3b46efe99905/1200/1200/False/zero-to-one-2.jpg",
     isFavorite: false,
@@ -181,7 +187,7 @@ export default [
     id: 21,
     bookName: "The Modern JavaScript Tutorial",
     author: "Ilya Kantor",
-    category: "Currently Reading",
+    category: "CurrentlyReading",
     image:
       "https://d3f1iyfxxz8i1e.cloudfront.net/courses/course_image/7f2ebada2792.png",
     isFavorite: false,
@@ -199,7 +205,7 @@ export default [
     id: 23,
     bookName: "Learn Python the Hard Way",
     author: "Zed Shaw",
-    category: "Reread",
+    category: "Read",
     image:
       "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1498900198i/35561829.jpg",
     isFavorite: false,
@@ -217,7 +223,7 @@ export default [
     id: 25,
     bookName: "The ONE Thing",
     author: "Gary W. Keller and Jay Papasan",
-    category: "Favorite",
+    category: "Reread",
     image:
       "https://mindville.ng/wp-content/uploads/2022/07/16256798._SX318_.jpg",
     isFavorite: false,
@@ -235,7 +241,7 @@ export default [
     id: 27,
     bookName: "Deep Work",
     author: "Cal Newport",
-    category: "Favorite",
+    category: "Reread",
     image:
       "https://mindville.ng/wp-content/uploads/2022/03/25744928._SY475_.jpg",
     isFavorite: false,
@@ -280,7 +286,7 @@ export default [
     id: 32,
     bookName: "Why We Sleep",
     author: "Matthew Walker",
-    category: "Favorite",
+    category: "Reread",
     image:
       "https://d28hgpri8am2if.cloudfront.net/book_images/onix/cvr9781501144325/why-we-sleep-9781501144325_hr.jpg",
     isFavorite: false,
@@ -298,7 +304,7 @@ export default [
     id: 34,
     bookName: "Daring Greatly",
     author: "Brené Brown",
-    category: "Reread",
+    category: "Read",
     image:
       "https://vogandwodbooks.com/wp-content/uploads/2022/09/DARING-GREATLY..jpg",
     isFavorite: false,
@@ -307,7 +313,7 @@ export default [
     id: 35,
     bookName: "Discipline Is Destiny",
     author: "Ryan Holiday",
-    category: "Reread",
+    category: "Read",
     image:
       "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1656930457l/60018575.jpg",
     isFavorite: false,
@@ -352,7 +358,7 @@ export default [
     id: 40,
     bookName: "The Selfish Gene",
     author: "Richard Dawkins",
-    category: "Reread",
+    category: "Read",
     image:
       "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1366758096i/61535.jpg",
     isFavorite: false,
@@ -361,7 +367,7 @@ export default [
     id: 41,
     bookName: "Predictably Irrational",
     author: "Dan Ariely",
-    category: "Reread",
+    category: "Read",
     image:
       "https://m.media-amazon.com/images/W/MEDIAX_792452-T2/images/I/61cjZXBNl2L._AC_UF1000,1000_QL80_.jpg",
     isFavorite: false,
@@ -370,7 +376,7 @@ export default [
     id: 42,
     bookName: "Phantoms in the Brain",
     author: "Sandra Blakeslee and V. S. Ramachandran",
-    category: "Reread",
+    category: "Read",
     image:
       "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTZ7XWYrUf-3iQ2SsHMT_cJ9wMiCyuyNZyjwem0o6evLGOjy-nP",
     isFavorite: false,
@@ -379,7 +385,7 @@ export default [
     id: 43,
     bookName: "The Happiness Advantage",
     author: "Shawn Achor",
-    category: "Read",
+    category: "Reread",
     image:
       "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTAOcLCfMljLuXlHVmVuY6LUMSnHowVIYkmVM0sa9l5rs1qAce6",
     isFavorite: false,
@@ -388,7 +394,7 @@ export default [
     id: 44,
     bookName: "Sometimes You Win - Sometimes You Learn",
     author: "John C. Maxwell",
-    category: "Reread",
+    category: "Read",
     image:
       "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSjqJwH00Av-MsxUFfCrQdTRfWSJy6jyymSjRg2G69rnjqQlTZd",
     isFavorite: false,
@@ -405,7 +411,7 @@ export default [
     id: 46,
     bookName: "Bold",
     author: "Peter Diamandis and Steven Kotler",
-    category: "Reread",
+    category: "Read",
     image:
       "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1422848692i/22609444.jpg",
     isFavorite: false,
@@ -414,7 +420,7 @@ export default [
     id: 47,
     bookName: "Sapiens",
     author: "Yuval Noah Harari",
-    category: "Reread",
+    category: "Read",
     image:
       "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcS4E0vVn6DX552o0XnrlZ3CLgjl6MU7cLrxuZVzIEw1Bk63-4VV",
     isFavorite: false,
@@ -432,7 +438,7 @@ export default [
     id: 49,
     bookName: "The Talent Code",
     author: "Daniel Coyle",
-    category: "Read",
+    category: "Reread",
     image:
       "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcS1TNspEEf_J1mJUT6Td3lHTnmsWiNgF2g7MPloe22QcJgD2xxx",
     isFavorite: false,
@@ -450,7 +456,7 @@ export default [
     id: 51,
     bookName: "Onward",
     author: "Howard Schultz",
-    category: "Reread",
+    category: "Read",
     image:
       "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1390950547i/9151181.jpg",
     isFavorite: false,
@@ -459,7 +465,7 @@ export default [
     id: 52,
     bookName: "The Brain That Changes Itself",
     author: "Norman Doidge",
-    category: "Reread",
+    category: "Read",
     image:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjbgjv_1zgdsmE3IIjW8LHOoSkwgF2Eo71W2QGC6ihEmd7TA7Y",
     isFavorite: false,
@@ -468,7 +474,7 @@ export default [
     id: 53,
     bookName: "Incognito",
     author: "David Eagleman",
-    category: "Reread",
+    category: "Read",
     image:
       "https://m.media-amazon.com/images/W/MEDIAX_792452-T2/images/I/51QPaes6mXL._AC_UF350,350_QL50_.jpg",
     isFavorite: false,
@@ -477,7 +483,7 @@ export default [
     id: 54,
     bookName: "The Power of Myth",
     author: "Joseph Campbell",
-    category: "Reread",
+    category: "Read",
     image:
       "https://vogandwodbooks.com/wp-content/uploads/2022/09/The-Power-of-Myth..jpg",
     isFavorite: false,
@@ -486,7 +492,7 @@ export default [
     id: 55,
     bookName: "The Moral Animal Book",
     author: "Robert Wright",
-    category: "Reread",
+    category: "Read",
     image:
       "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcS1r9xbcVNR5wdN3Fzt3CSgzwtL2K-tqOy5_Bkb703GkiXUX6qL",
     isFavorite: false,
@@ -495,7 +501,7 @@ export default [
     id: 56,
     bookName: "Principles",
     author: "Ray Dalio",
-    category: "Reread",
+    category: "Read",
     image:
       "https://d28hgpri8am2if.cloudfront.net/book_images/onix/cvr9781501124020/principles-9781501124020_lg.jpg",
     isFavorite: false,
@@ -504,7 +510,7 @@ export default [
     id: 57,
     bookName: "Disrupt You!",
     author: "Jay Samit",
-    category: "Reread",
+    category: "Read",
     image:
       "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcT3mYKEytLeOeoZjed_nzcptme4BRodyT1NL6mSm09i2qvGkSEx",
     isFavorite: false,
@@ -513,7 +519,7 @@ export default [
     id: 58,
     bookName: "The Madness of Crowds",
     author: "Douglas Murray",
-    category: "Reread",
+    category: "Read",
     image:
       "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQcA9Q9VH-bkPVSt0IjXfUnxlP-3uVkVU2vRTd_anH7pPfOeKex",
     isFavorite: false,
@@ -522,7 +528,7 @@ export default [
     id: 59,
     bookName: "The Blank Slate",
     author: "Steven Pinker",
-    category: "Reread",
+    category: "Read",
     image:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfoNuZERY2C6VSU0ieZV5a1rxFkTQx9qG6UNIoZfiBSJ8cs9T4",
     isFavorite: false,
