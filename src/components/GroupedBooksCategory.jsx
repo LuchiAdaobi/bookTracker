@@ -1,21 +1,21 @@
-import { useState } from "react";
+// GroupedBooksCategory.jsx
+import React, { useState, useEffect } from "react";
 
-export default function GroupedBooksCategory({ books, selectedBookCategory }) {
+export default function GroupedBooksCategory({
+  books,
+  selectedBookCategory,
+  updateCollapsedCategories,
+  collapsedCategories,
+}) {
   const [groupedBooks, setGroupedBooks] = useState(groupedBooksDetail);
 
   function groupedBooksDetail() {
-    const booksCategory = [
-      "Read",
-      "Reread",
-      "CurrentlyReading",
-      "Finished",
-    //   "Favorite",
-    ];
+    const booksCategory = ["Read", "Reread", "CurrentlyReading", "Finished"];
 
     return booksCategory.map((book) => {
       const bookGroup = books.filter((bk) => bk.category === book);
       return {
-        book,
+        category: book, // Update property name to category
         group: bookGroup,
         collapsed: selectedBookCategory === book ? false : true,
       };
@@ -24,12 +24,14 @@ export default function GroupedBooksCategory({ books, selectedBookCategory }) {
 
   function handleBookCategoryClick(e) {
     const transformedGroupData = groupedBooks.map((groupedData) =>
-      groupedData.book === e.currentTarget.id
+      groupedData.category === e.currentTarget.id // Update property name to category
         ? { ...groupedData, collapsed: !groupedData.collapsed }
         : groupedData
     );
 
     setGroupedBooks(transformedGroupData);
+
+    updateCollapsedCategories(transformedGroupData);
   }
 
   return (
@@ -44,21 +46,19 @@ export default function GroupedBooksCategory({ books, selectedBookCategory }) {
                 style={{ cursor: "pointer" }}
               >
                 <h4
-                  id={item.book}
+                  id={item.category}
                   className="card-header text-secondary bg-white"
                   onClick={handleBookCategoryClick}
                 >
-                  Status: {item.book}
+                  Status: {item.category}
                 </h4>
                 <div
-                  id={"collapse_" + item.book}
+                  id={"collapse_" + item.category}
                   className={item.collapsed ? "collapse" : ""}
                 >
                   {item.group.map((bk, index) => (
                     <div key={index} className="mt-2 foldable">
-                      <h5 className="card-title mt-2">
-                        Title: {bk.bookName}
-                      </h5>
+                      <h5 className="card-title mt-2">Title: {bk.bookName}</h5>
                       <p className="author">Author: {bk.author}</p>
                     </div>
                   ))}

@@ -1,9 +1,17 @@
+// Header.jsx
+import React from "react";
 import { useNavigate } from "react-router-dom";
 
-export default function Header({ selectedBookCategory, bookCategoryCount, favBookCategoryCount }) {
+export default function Header({
+  selectedBookCategory,
+  books, // Pass the books array to calculate the book count dynamically
+  favBookCategoryCount,
+  collapsedCategories,
+}) {
   const navigate = useNavigate();
   const isFavoritePage = window.location.pathname === "/FavoriteBooks";
-  const groupedBooksCategory = window.location.pathname === "/GroupedBooksCategory";
+  const isGroupedBooksCategoryPage =
+    window.location.pathname === "/GroupedBooksCategory";
 
   return (
     <header className="container">
@@ -13,15 +21,39 @@ export default function Header({ selectedBookCategory, bookCategoryCount, favBoo
           {isFavoritePage ? (
             <h6>
               You have {favBookCategoryCount}{" "}
-              {favBookCategoryCount > 1 ? "favorites" : "favorite"}{" "}
+              <span style={{ color: "#bf3e85" }}>
+                {" "}
+                {favBookCategoryCount > 1 ? "Favorites" : "Favorite"}{" "}
+              </span>{" "}
               {favBookCategoryCount > 1 ? "books" : "book"}.
             </h6>
+          ) : isGroupedBooksCategoryPage ? (
+            collapsedCategories
+              .filter((collapsedCategory) => !collapsedCategory.collapsed)
+              .map((collapsedCategory, index) => (
+                <h6 key={index}>
+                  There are {collapsedCategory.group.length}{" "}
+                  {collapsedCategory.group.length > 1 ? "books" : "book"} in the{" "}
+                  <span style={{ color: "#bf3e85" }}>
+                    {collapsedCategory.category}
+                  </span>{" "}
+                  category.
+                </h6>
+              ))
           ) : (
             <h6>
-              There {bookCategoryCount > 1 ? "are" : "is"} {bookCategoryCount}{" "}
-              {bookCategoryCount > 1 ? "books" : "book"} in the{" "}
+              There{" "}
+              {collapsedCategories.find(
+                (category) => category.category === selectedBookCategory
+              )?.group.length || 0}{" "}
+              {collapsedCategories.find(
+                (category) => category.category === selectedBookCategory
+              )?.group.length > 1
+                ? "books"
+                : "book"}{" "}
+              in the{" "}
               <span style={{ color: "#bf3e85" }}>{selectedBookCategory}</span>{" "}
-              category
+              category.
             </h6>
           )}
         </div>

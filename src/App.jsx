@@ -1,3 +1,4 @@
+// App.js
 import { useState, useEffect } from "react";
 import data from "./data";
 import Navbar from "./components/Nav";
@@ -18,20 +19,43 @@ function App() {
       "CurrentlyReading"
   );
   const [searchQuery, setSearchQuery] = useState("");
-  // const [isFav, setIsFav] = useState(false);
+  const [groupedBooks, setGroupedBooks] = useState([]);
+  const [collapsedCategories, setCollapsedCategories] = useState([]);
 
   useEffect(() => {
     localStorage.setItem("booksList", JSON.stringify(books));
   }, [books]);
+
   useEffect(() => {
-    localStorage.setItem("bookCategory", JSON.stringify(selectedBookCategory));
-  }, [selectedBookCategory]);
+    localStorage.setItem(
+      "selectedBookCategory",
+      JSON.stringify(selectedBookCategory)
+    );
+    setGroupedBooks(calculateGroupedBooks(books, selectedBookCategory));
+  }, [selectedBookCategory, books]);
 
-  function handleBookSelection(e) {
+ const calculateGroupedBooks = (books, selectedBookCategory) => {
+   const booksCategory = ["Read", "Reread", "CurrentlyReading", "Finished"];
+
+   return booksCategory.map((book) => {
+     const bookGroup = books.filter((bk) => bk.category === book);
+     return {
+       category: book, // Add the category property
+       group: bookGroup,
+       collapsed: selectedBookCategory === book ? false : true,
+     };
+   });
+ };
+
+  const updateCollapsedCategories = (updatedCollapsedCategories) => {
+    setCollapsedCategories(updatedCollapsedCategories);
+  };
+
+  const handleBookSelection = (e) => {
     setSelectedBookCategory(e.target.value);
-  }
+  };
 
-  function handleBookCardClick(e) {
+  const handleBookCardClick = (e) => {
     const transformedBooks = books.map((book) =>
       book.id === parseInt(e.currentTarget.id)
         ? book.category === selectedBookCategory
@@ -41,7 +65,7 @@ function App() {
     );
 
     setBooks(transformedBooks);
-  }
+  };
 
   const handleFavClick = (bookId, e) => {
     e.stopPropagation();
@@ -55,12 +79,9 @@ function App() {
     });
   };
 
-  // const filteredBooks = books.filter((book) =>
-  //   book.bookName.toLowerCase().includes(searchQuery.toLowerCase())
-  // );
-  function handleSearchInput(e) {
-     setSearchQuery(e.target.value);
-  }
+  const handleSearchInput = (e) => {
+    setSearchQuery(e.target.value);
+  };
 
   return (
     <div>
@@ -69,15 +90,11 @@ function App() {
         <Header
           selectedBookCategory={selectedBookCategory}
           bookCategoryCount={
-            books.filter((book) => {
-              return book.category === selectedBookCategory;
-            }).length
+            books.filter((book) => book.category === selectedBookCategory)
+              .length
           }
-          favBookCategoryCount={
-            books.filter((book) => {
-              return book.isFavorite;
-            }).length
-          }
+          favBookCategoryCount={books.filter((book) => book.isFavorite).length}
+          collapsedCategories={collapsedCategories}
         />
         <Routes>
           <Route
@@ -91,7 +108,6 @@ function App() {
                 handleFavClick={handleFavClick}
                 handleSearchInput={handleSearchInput}
                 searchQuery={searchQuery}
-                // isFav={isFav}
               />
             }
           ></Route>
@@ -101,6 +117,8 @@ function App() {
               <GroupedBooksCategory
                 books={books}
                 selectedBookCategory={selectedBookCategory}
+                updateCollapsedCategories={updateCollapsedCategories}
+                collapsedCategories={collapsedCategories}
               />
             }
           ></Route>
