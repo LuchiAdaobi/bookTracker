@@ -5,7 +5,7 @@ export default function GroupedBooksCategory({
   books,
   selectedBookCategory,
   updateCollapsedCategories,
-  collapsedCategories,
+  // collapsedCategories,
 }) {
   const [groupedBooks, setGroupedBooks] = useState(groupedBooksDetail);
 

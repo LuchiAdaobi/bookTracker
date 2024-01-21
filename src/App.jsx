@@ -11,6 +11,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import FavoriteBooks from "./components/FavoriteBooks";
 
 function App() {
+  // STATE
   const [books, setBooks] = useState(
     JSON.parse(localStorage.getItem("booksList")) || data
   );
@@ -19,8 +20,23 @@ function App() {
       "CurrentlyReading"
   );
   const [searchQuery, setSearchQuery] = useState("");
+  //  const [groupedBooks, setGroupedBooks] = useState(
+  //    calculateGroupedBooks(books, selectedBookCategory)
+  //  );
   const [groupedBooks, setGroupedBooks] = useState([]);
-  const [collapsedCategories, setCollapsedCategories] = useState([]);
+
+  const [collapsedCategories, setCollapsedCategories] = useState([
+    {
+      category: "Read",
+      group: [],
+      collapsed: false,
+    },
+  ]);
+
+  // USEEFFECT
+  useEffect(() => {
+    setCollapsedCategories(calculateGroupedBooks(books, selectedBookCategory));
+  }, [groupedBooks, selectedBookCategory, books]);
 
   useEffect(() => {
     localStorage.setItem("booksList", JSON.stringify(books));
@@ -34,19 +50,19 @@ function App() {
     setGroupedBooks(calculateGroupedBooks(books, selectedBookCategory));
   }, [selectedBookCategory, books]);
 
- const calculateGroupedBooks = (books, selectedBookCategory) => {
-   const booksCategory = ["Read", "Reread", "CurrentlyReading", "Finished"];
+  // FUNCTIONS
+  const calculateGroupedBooks = (books, selectedBookCategory) => {
+    const booksCategory = ["Read", "Reread", "CurrentlyReading", "Finished"];
 
-   return booksCategory.map((book) => {
-     const bookGroup = books.filter((bk) => bk.category === book);
-     return {
-       category: book, // Add the category property
-       group: bookGroup,
-       collapsed: selectedBookCategory === book ? false : true,
-     };
-   });
- };
-
+    return booksCategory.map((book) => {
+      const bookGroup = books.filter((bk) => bk.category === book);
+      return {
+        category: book,
+        group: bookGroup,
+        collapsed: selectedBookCategory === book ? false : true,
+      };
+    });
+  };
   const updateCollapsedCategories = (updatedCollapsedCategories) => {
     setCollapsedCategories(updatedCollapsedCategories);
   };

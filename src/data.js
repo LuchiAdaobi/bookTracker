@@ -7,7 +7,6 @@ export default [
     image:
       "https://m.media-amazon.com/images/I/71FCbiv0tTL._AC_UF1000,1000_QL80_.jpg",
     isFavorite: false,
-    
   },
   {
     id: 1,
@@ -16,7 +15,6 @@ export default [
     category: "Reread",
     image: "https://mindville.ng/wp-content/uploads/2022/03/18668059.jpg",
     isFavorite: false,
-    
   },
   {
     id: 2,
@@ -25,7 +23,15 @@ export default [
     category: "Reread",
     image: "https://images.penguinrandomhouse.com/cover/9780143124177",
     isFavorite: false,
-    
+  },
+  {
+    id: 62,
+    bookName: "Influence",
+    author: "Robert Cialdini",
+    category: "Read",
+    image:
+      "https://cdn-images-1.medium.com/max/317/1*AQsdmgrMLLrEReB_VF1qjA.jpeg",
+    isFavorite: false,
   },
   {
     id: 3,
@@ -34,7 +40,6 @@ export default [
     category: "Reread",
     image: "https://m.media-amazon.com/images/I/41KCjY8xg3L.jpg",
     isFavorite: false,
-    
   },
   {
     id: 4,
@@ -43,7 +48,6 @@ export default [
     category: "Read",
     image: "https://m.media-amazon.com/images/I/517M31AmZmL._SL500_.jpg",
     isFavorite: false,
-    
   },
   {
     id: 5,
@@ -52,7 +56,6 @@ export default [
     category: "Read",
     image: "https://rhbooks.com.ng/wp-content/uploads/2020/09/martin.jpg",
     isFavorite: false,
-   
   },
   {
     id: 6,

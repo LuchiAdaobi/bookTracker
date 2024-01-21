@@ -32,7 +32,8 @@ export default function Header({
               .filter((collapsedCategory) => !collapsedCategory.collapsed)
               .map((collapsedCategory, index) => (
                 <h6 key={index}>
-                  There are {collapsedCategory.group.length}{" "}
+                  There {collapsedCategory.group.length > 1 ? "are" : "is"}{" "}
+                  {collapsedCategory.group.length}{" "}
                   {collapsedCategory.group.length > 1 ? "books" : "book"} in the{" "}
                   <span style={{ color: "#bf3e85" }}>
                     {collapsedCategory.category}
