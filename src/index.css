@@ -192,17 +192,25 @@ body {
       font-size: 0.9rem;
     }
     .mt-2 p {
-      font-size: 0.75rem;
+      font-size: 0.65rem;
     }
     .d-flex {
       flex-direction: column;
       gap: 0.5rem;
     }
     .col-6 {
-      width: 45vw;
+      width: 60vw;
+    }
+    .col-8 h6{
+      font-size: .75rem;
     }
     .card {
-      width: 180px;
+      width: 360px;
     }
+    .card-img-top {
+    overflow: hidden;
+    height: 500px;
+  }
+  
   }
 }

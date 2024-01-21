@@ -5,7 +5,6 @@ export default function GroupedBooksCategory({
   books,
   selectedBookCategory,
   updateCollapsedCategories,
-  // collapsedCategories,
 }) {
   const [groupedBooks, setGroupedBooks] = useState(groupedBooksDetail);
 
@@ -15,7 +14,7 @@ export default function GroupedBooksCategory({
     return booksCategory.map((book) => {
       const bookGroup = books.filter((bk) => bk.category === book);
       return {
-        category: book, // Update property name to category
+        category: book,
         group: bookGroup,
         collapsed: selectedBookCategory === book ? false : true,
       };

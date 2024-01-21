@@ -20,9 +20,6 @@ function App() {
       "CurrentlyReading"
   );
   const [searchQuery, setSearchQuery] = useState("");
-  //  const [groupedBooks, setGroupedBooks] = useState(
-  //    calculateGroupedBooks(books, selectedBookCategory)
-  //  );
   const [groupedBooks, setGroupedBooks] = useState([]);
 
   const [collapsedCategories, setCollapsedCategories] = useState([

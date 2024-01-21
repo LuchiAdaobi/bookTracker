@@ -44,12 +44,20 @@ export default function Header({
           ) : (
             <h6>
               There{" "}
+              
               {collapsedCategories.find(
                 (category) => category.category === selectedBookCategory
-              )?.group.length || 0}{" "}
+              )?.group.length !== 1
+                ? "are"
+                : "is"}{" "}
+              {
+                collapsedCategories.find(
+                  (category) => category.category === selectedBookCategory
+                )?.group.length
+              }{" "}
               {collapsedCategories.find(
                 (category) => category.category === selectedBookCategory
-              )?.group.length > 1
+              )?.group.length !== 1
                 ? "books"
                 : "book"}{" "}
               in the{" "}

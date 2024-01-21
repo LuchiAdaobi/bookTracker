@@ -9,6 +9,15 @@ export default [
     isFavorite: false,
   },
   {
+    id: 70,
+    bookName: "Meditations",
+    author: "Marcus Aurelius",
+    category: "CurrentlyReading",
+    image:
+      "https://m.media-amazon.com/images/I/71FCbiv0tTL._AC_UF1000,1000_QL80_.jpg",
+    isFavorite: false,
+  },
+  {
     id: 1,
     bookName: "The Obstacle is The Way",
     author: "Ryan Holiday",
