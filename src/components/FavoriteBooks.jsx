@@ -10,7 +10,8 @@ export default function FavoriteBooks({ books, handleFavClick }) {
           <div className="card-collection">
             
               {favoriteBooks.map((book) => (
-                <div key={book.id} className="card m-2">
+                <div key={book.id} className="card m-2 book-content
+                ">
                   <img
                     src={book.image}
                     alt={book.bookName}

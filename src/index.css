@@ -201,6 +201,9 @@ body {
     .col-6 {
       width: 80vw;
     }
+    .col-8{
+      width: 80vw;
+    }
     .col-8 h6{
       font-size: .75rem;
     }
