@@ -205,11 +205,15 @@ body {
       font-size: .75rem;
     }
     .card {
-      width: 360px;
+      width: 500px;
+      display: flex;
+      flex-direction: row;
     }
     .card-img-top {
     overflow: hidden;
-    height: 500px;
+    height: 150px;
+    width: 102px;
+    object-fit: contain;
   }
   
   }
