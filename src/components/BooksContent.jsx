@@ -57,8 +57,8 @@ export default function Books({
                 id={book.id}
                 className={
                   book.category === selectedBookCategory
-                    ? "card m-2 standout"
-                    : "card m-2"
+                    ? "card m-2 standout book-content"
+                    : "card m-2 book-content"
                 }
                 onClick={handleBookCardClick}
               >

@@ -204,7 +204,7 @@ body {
     .col-8 h6{
       font-size: .75rem;
     }
-    .card {
+    .card.book-content {
       width: 500px;
       display: flex;
       flex-direction: row;
